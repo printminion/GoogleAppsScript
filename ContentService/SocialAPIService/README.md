@@ -2,8 +2,9 @@
 
 
 ##facebook
-*Request:* https://script.google.com/macros/s/<YOUR_CONTENT_SCRIPT_ID>/exec?key=AIzaSyDyK7kSJV3&network=facebook&user=m.kupriyanov
-*Response:*
+**Request:** https://script.google.com/macros/s/YOUR_CONTENT_SCRIPT_ID/exec?key=YOUR_API_KEY&network=facebook&user=m.kupriyanov
+
+**Response:**
 <pre>{
   status: "success",
   msg: "ok",
@@ -15,7 +16,9 @@
 }</pre>
 
 ##twitter
-*Request:* https://script.google.com/macros/s/<YOUR_CONTENT_SCRIPT_ID>/exec?key=AIzaSyDyK7kSJV3&network=twitter&user=russenreaktor
+**Request:** https://script.google.com/macros/s/YOUR_CONTENT_SCRIPT_ID/exec?key=YOUR_API_KEY&network=twitter&user=russenreaktor
+
+**Response:**
 <pre>{
   status: "success",
   msg: "ok",
@@ -27,7 +30,9 @@
 }</pre>
 
 ##googleplus
-*Request:* https://script.google.com/macros/s/<YOUR_CONTENT_SCRIPT_ID>/exec?key=AIzaSyDyK7kSJV3&network=googleplus&user=104512463398531242371
+**Request:** https://script.google.com/macros/s/YOUR_CONTENT_SCRIPT_ID/exec?key=YOUR_API_KEY&network=googleplus&user=104512463398531242371
+
+**Response:**
 <pre>{
   status: "success",
   msg: "ok",
@@ -48,7 +53,9 @@
 }</pre>
 
 ##youtube
-*Request:* https://script.google.com/macros/s/<YOUR_CONTENT_SCRIPT_ID>/exec?key=AIzaSyDyK7kSJV3&network=youtube&user=russenreaktor
+**Request:** https://script.google.com/macros/s/YOUR_CONTENT_SCRIPT_ID/exec?key=YOUR_API_KEY&network=youtube&user=russenreaktor
+
+**Response:**
 <pre>{
   status: "success",
   msg: "ok",
