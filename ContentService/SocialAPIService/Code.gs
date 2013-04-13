@@ -8,13 +8,18 @@
                 'Ar4VBrcw6qIyjc': {description: 'm.kupriyanov project'},
                };
 
+function testDoGet() {
+
+  var request = {queryString: 'network=twitter&user=russenreaktor&key=AIzaSyDyK7kSJV3',
+                 parameter:{user:['russenreaktor'], network:['russenreaktor'], key:['AIzaSyDyK7kSJV3']}, contextPath:null,
+                 parameters:{user:['russenreaktor'], network:['russenreaktor'], key:['AIzaSyDyK7kSJV3']}, contentLength:-1};
+
+  return doGet(request);
+}
+
 function doGet(request) {
 
   Logger.log(request);
-//  var request = {queryString: 'network=twitter&user=russenreaktor&key=AIzaSyDyK7kSJV3',
-//                 parameter:{user:['russenreaktor'], network:['russenreaktor'], key:['AIzaSyDyK7kSJV3']}, contextPath:null,
-//                 parameters:{user:['russenreaktor'], network:['russenreaktor'], key:['AIzaSyDyK7kSJV3']}, contentLength:-1};
-
 
   var result = {status: 'error', msg: 'unknown error'};
 
