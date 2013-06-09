@@ -31,10 +31,15 @@ function getSocialReach_(network, user) {
       throw 'failed to get result';
     }
     
+    if (data.data.reach == -1) {
+      return NaN;
+    }
+    
     return data.data.reach;
 
   } catch(e) {
-    return -1;
+    Logger.log(e);
+    return NaN;
   }
   
 
