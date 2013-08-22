@@ -1,9 +1,9 @@
 Indiegogo Campaign Tracker
-================
-Script to fetch the data from any Indiegogo campaign and to update the graph for analysing/sharing it later.
+========================
+Google Apps Script to fetch the data from any Indiegogo campaign and to update the graph for analysing/sharing it later.
 
 Example
--------
+-----------
 * Campaign: [ubuntu-edge](http://www.indiegogo.com/projects/ubuntu-edge) 30 days raised $12,812,776 of $32,000,000 goal
 * Time trigger: 1 min
 * Accumulated data: **10350 rows**
@@ -12,7 +12,7 @@ Example
 
 
 Configuration
--------------
+-------------------
 * Copy the [spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Akgh73WhU1qHdFgzazR6SERiWnpYTTlmVG9oaVRVcFE#gid=0).
 * Rename first sheet's name to the id of the desired Indiegogo campaign,
    e.g. http://www.indiegogo.com/projects/ubuntu-edge will be "ubuntu-edge".
