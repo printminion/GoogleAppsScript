@@ -1,6 +1,6 @@
 Indiegogo Campaign Tracker
 ================
-Script to fetch the data from any indiegogo campaign and to update the graph for analysing/sharing it later.
+Script to fetch the data from any Indiegogo campaign and to update the graph for analysing/sharing it later.
 
 Example
 -------
@@ -13,12 +13,12 @@ Example
 
 Configuration
 -------------
-* Copy the [spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Akgh73WhU1qHdFgzazR6SERiWnpYTTlmVG9oaVRVcFE#gid=0)
-* Rename first sheet's name to the id of the desired indiegogo campaign,
+* Copy the [spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Akgh73WhU1qHdFgzazR6SERiWnpYTTlmVG9oaVRVcFE#gid=0).
+* Rename first sheet's name to the id of the desired Indiegogo campaign,
    e.g. http://www.indiegogo.com/projects/ubuntu-edge will be "ubuntu-edge".
-* Create blank project via https://script.google.com, create new script files and paste the code in to it
+* Create blank project via https://script.google.com, create new script files and paste the code in to it.
 * Set the **CONF_PUBLIC_SPREADSHEET_ID** with the key of your copied spreadsheet.
-* Set the **CAMPAIGN_ID** with desired indiegogo campaign, e.g. "ubuntu-edge".
-* Add time driven trigger call to the trackIndiegogoCampaign function.
-  "Resources" -> "trackIndiegogoCampaign" -> "add new trigger.
-  trackIndiegogoCampaign | time driven | Minutes driven | **desired time period**
+* Set the **CAMPAIGN_ID** with desired Indiegogo campaign id, e.g. "ubuntu-edge".
+* Add time driven trigger call to the **trackIndiegogoCampaign** function.
+  "Resources" -> "trackIndiegogoCampaign" -> "add new trigger"
+  trackIndiegogoCampaign | time driven | Minutes driven | **desired time period**.
