@@ -22,3 +22,9 @@ Configuration
 * Add time driven trigger call to the **trackIndiegogoCampaign** function.
   "Resources" -> "trackIndiegogoCampaign" -> "add new trigger"
   trackIndiegogoCampaign | time driven | Minutes driven | **desired time period**.
+
+
+Links
+-------
+* Author: [Misha M.-Kupriyanov](https://plus.google.com/104512463398531242371/)
+* Source: [Git](https://github.com/russenreaktor/GoogleAppsScript/tree/master/IndiegogoTracker)
