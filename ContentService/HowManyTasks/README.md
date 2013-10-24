@@ -1,11 +1,12 @@
 HowManyTasks
 ================
 
-Dashboard for showing your colleagues how many Tasks you have in your Gmail and Basecamp.
-Color ans size of labels dependent on the ammount of tasks.
+Here is my fun little side Google Apps Script project ;)
 
-* Gmail tasks must be labeled with special label e.g. "!task"
-* Basecamp API is used to get the tasks count
+This dashboard shows your colleagues how many tasks you have in your Gmail and Basecamp. Color and size of the labels depend on the amount of tasks.
+
+* Gmail messages should be labeled with one particular label, e.g. "!task"
+* Basecamp API has been used to get the count of tasks
 
 Set proper values in the [HtmlService.gs](https://github.com/russenreaktor/GoogleAppsScript/tree/master/ContentService/HowManyTasks/HtmlService.gs)
 

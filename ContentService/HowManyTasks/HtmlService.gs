@@ -1,3 +1,16 @@
+/**
+* This dashboard shows your colleagues how many tasks you have in your Gmail and Basecamp.
+* Color and size of the labels depend on the amount of tasks.
+*
+* 1. Copy this project "File" -> "Make copy..."
+* 2. Set following configuration values CONF_NAME, BASECAMP_CLIENT_ID, BASECAMP_USER, BASECAMP_PASSWORD, GMAIL_TASK_LABEL
+* 3. Prepare current project version for publishing "File" -> "Manage versions..." -> "Save New version"
+* 4. "Publish" -> "Deploy as web app..." (choose version) and hit "Deploy". Now you will get the link to published web app.
+*
+* @link   Github https://github.com/russenreaktor/GoogleAppsScript/tree/master/ContentService/HowManyTasks
+* @author Misha M.-Kupriyanov https://plus.google.com/104512463398531242371/
+*/
+
 var CONF_NAME = 'Misha';
 var BASECAMP_CLIENT_ID = '<PUT BASECAMP YOUR CLIENT ID HERE>';
 var BASECAMP_USER = '<PUT BASECAMP YOUR USER ID HERE>';
