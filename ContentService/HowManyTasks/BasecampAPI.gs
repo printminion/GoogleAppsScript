@@ -1,3 +1,7 @@
+/**
+ * Hint: Edit the HtmlService.gs
+ */
+
 //https://basecamp.com/<accountid>/api/v1/people/me.json
 //https://basecamp.com/<accountid>/api/v1/people/<yourid>/assigned_todos.json
 
