@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>How many tasks does <?= CONF_NAME ?> have?</title>
+
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+  function onSuccess(response) {
+
+    updateBadge('gmail', response.gmail.assigned_todos_count);
+    updateBadge('basecamp', response.basecamp.assigned_todos_count);
+
+    $('#gmail .counter').html(response.gmail.assigned_todos_count);
+    $('#basecamp .counter').html(response.basecamp.assigned_todos_count);
+  }
+
+  function updateBadge(id, value) {
+
+   var labelClass = 'label-warning';
+   if (value <= 5) {
+      labelClass = 'label-success';
+   } else if (value > 10) {
+      labelClass = 'label-danger';
+   }
+
+   $('#' + id + ' .badge').addClass(labelClass);
+  }
+
+  function onFailure(error) {
+    alert('Error:' + error.message);
+  }
+
+
+  google.script.run
+  .withSuccessHandler(onSuccess)
+  .withFailureHandler(onFailure)
+  .getTasks();
+
+
+</script>
+<style type="text/css">
+ body {
+   font-family: 'Oswald', sans-serif;
+   color: #444444;
+ }
+
+h1 {
+font-size: 4em;
+font-weight: bold;
+}
+
+
+h1 i {
+color: #5cb85c;
+font-style: normal;
+}
+
+.title {
+position: absolute;
+top: 50px;
+width: 1080px;
+left: 50%;
+margin-left: -540px;
+z-index: 5;
+}
+
+
+ .badge {
+ position: absolute;
+ width: 200px;
+ height: 200px;
+ border-radius: 100px;
+ background-color: #999999;
+ right: 0;
+ bottom: 0;
+ zoom: 40%;
+ transition: all 0.1s;
+ }
+
+ .counter {
+ position: absolute;
+ width: 100px;
+ height: 100px;
+ top: 50px;
+ left: 50px;
+ text-align: center;
+ line-height: 100px;
+ font-size: 5em;
+ font-weight: bold;
+ color: #fff;
+ font-family: 'Oswald', sans-serif;
+ }
+
+ .badge.label-danger {
+ zoom: 50%;
+ }
+
+ .badge.label-warning {
+ zoom: 45%;
+ }
+
+.label-success {
+  background-color: #5cb85c;
+}
+
+.label-info {
+  background-color: #5bc0de;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+}
+.label-danger {
+  background-color: #d9534f;
+}
+
+ ul.sources {
+ margin: 0;
+ padding: 0;
+ width: 900px;
+ height: 300px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ margin-left: -514px;
+ margin-top: -150px;
+ }
+
+ ul.sources li {
+ position: relative;
+ list-style-type: none;
+ display: block;
+ float: left;
+ width: 300px;
+ height: 300px;
+ }
+
+ul.sources img {
+position: absolute;
+right: 0;
+bottom: 0;
+}
+
+#basecamp img {
+bottom: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<h1 class="title">How many tasks does <i><?= CONF_NAME ?></i> have?</h1>
+
+    <ul class="sources">
+    <li id="gmail">
+    <img src="https://lh4.googleusercontent.com/-yevNStr_dsk/UmbwDkg3FqI/AAAAAAAACy8/QGvRd4O3uAY/s200-no/gmail1.png" width="200" height="200" title="Google Mail">
+    <div class="badge">
+    <div class="counter">?</div>
+    </div>
+    </li>
+
+    <li id="basecamp">
+    <img src="https://lh4.googleusercontent.com/-r9kAcV1UO2s/UmbwbhPLBHI/AAAAAAAACzY/9tt77LMzACQ/w200-h166-no/basecamp-logo-for-fluid-200x200.png" width="200" height="166" title="Basecamp">
+    <div class="badge">
+    <div class="counter">?</div>
+    </div>
+    </li>
+
+    <li id="mantis">
+    <img src="https://lh3.googleusercontent.com/-NNBCKmMJTOU/UmbzXgpMzhI/AAAAAAAACzo/5BYqfPYWj6s/s200-no/logo-mantis.jpg" width="200" height="200" title="Mantis">
+    <div class="badge">
+    <div class="counter">?</div>
+    </div>
+    </li>
+    </ul>
+
+
+  </body>
+</html>
