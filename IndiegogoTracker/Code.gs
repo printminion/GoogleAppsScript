@@ -8,7 +8,7 @@
 * Configuration:
 * 1) copy the spreadsheet https://docs.google.com/spreadsheet/ccc?key=0Akgh73WhU1qHdFgzazR6SERiWnpYTTlmVG9oaVRVcFE#gid=0
 *    and replace the CONF_PUBLIC_SPREADSHEET_ID with the key of your copied spreadsheet
-* 2) rename first sheet with the id of the desired indiegogo campaign
+* 2) rename first sheet's name to the id of the desired indiegogo campaign
 *    e.g. http://www.indiegogo.com/projects/ubuntu-edge will be "ubuntu-edge".
 *    set the CAMPAIGN_ID configuration variable
 * 3) Add time driven trigger call the trackIndiegogoCampaign every desired time period.
