@@ -1,8 +1,17 @@
 /**
+ * @desc Allow your G Suite users or delegated editors to edit Google directory contact records
+ * @author Misha M.-Kupriyanov https://google.com/+MishaMKupriyanov
+ * @link https://github.com/printminion/GoogleAppsScript/tree/master/EditDirectoryContacts
+ * @link https://script.google.com/d/10nsoJksf98pEY5W-algHxyFKEDAEulo7H_2JUbKCNeRYmnzg9wNrtSqB/edit?usp=sharing
+ *
  * 1. Enable "Admin Directory API" in Resources -> "Advanced Google Services"
- * 2. Enable Admin SDK in "Developer Console Project" -> "*-project-id-*"-Link
- * 3. Run intitialize Mehod
+ * 2. Enable "Admin SDK" in "Developer Console Project" -> "*-project-id-*"-Link
+ * 3. Run the initialize method
  */
+
+function initialize() {
+    //run this method do set Script rights
+}
 
 function doGet(e) {
     Logger.log(e);
@@ -24,7 +33,6 @@ function doGet(e) {
     Logger.log(config);
 
 
-
     return html
         .evaluate()
         .setSandboxMode(HtmlService.SandboxMode.NATIVE)
@@ -38,13 +46,13 @@ function getScriptConfig() {
     var data = scriptProperties.getProperties();
 
     var config = {
-        'userMayEditTheirOwnData' : data.userMayEditTheirOwnData == 'true',
-        'usersWhoCanEditForeignData' : data.usersWhoCanEditForeignData == undefined ? '' : data.usersWhoCanEditForeignData,
-        'sendUpdateNotificationTo' : data.sendUpdateNotificationTo == undefined ? '' : data.sendUpdateNotificationTo
+        'userMayEditTheirOwnData': data.userMayEditTheirOwnData == 'true',
+        'usersWhoCanEditForeignData': data.usersWhoCanEditForeignData == undefined ? '' : data.usersWhoCanEditForeignData,
+        'sendUpdateNotificationTo': data.sendUpdateNotificationTo == undefined ? '' : data.sendUpdateNotificationTo
 
     };
 
-    config.ifCanEditUserData = function(email) {
+    config.ifCanEditUserData = function (email) {
 
         var emails = this.usersWhoCanEditForeignData.split(' ').join('').split(',');
 
@@ -52,7 +60,7 @@ function getScriptConfig() {
     };
 
 
-    config.ifCanEditOwnData = function(email) {
+    config.ifCanEditOwnData = function (email) {
 
         var isUserOwner = (email == Session.getActiveUser().getEmail());
 
@@ -68,17 +76,6 @@ function getScriptConfig() {
 }
 
 
-function test_config() {
-    var config = getScriptConfig();
-
-    var email = 'm@kupriyanov.com';
-
-    Logger.log('canEditForeignData(%s):%s', email, config.ifCanEditUserData(email));
-
-
-
-}
-
 function setScriptConfig(config) {
     Logger.log(config);
 
@@ -88,7 +85,6 @@ function setScriptConfig(config) {
     scriptProperties.setProperty('sendUpdateNotificationTo', config.sendUpdateNotificationTo);
 
 }
-
 
 
 function isUserAdmin(userKey) {
@@ -202,13 +198,6 @@ function getBasicContactData_(userKey) {
 }
 
 
-function test_checkEditRights() {
-    var email = 'admin@kupriyanov.com';
-
-    checkEditRights(email);
-
-}
-
 function checkEditRights(contactEMAIL) {
     var activeUserEmail = Session.getActiveUser().getEmail();
 
@@ -283,7 +272,7 @@ function updateContact(userKey, contact, config) {
 
 
             if (contact.PHONE_WORK !== undefined) {
-                resource.phones.push( {
+                resource.phones.push({
                     "value": contact.PHONE_WORK,
                     "primary": true,
                     "type": "work"
@@ -292,7 +281,7 @@ function updateContact(userKey, contact, config) {
 
 
             if (contact.PHONE_WORK_MOBILE !== undefined) {
-                resource.phones.push( {
+                resource.phones.push({
                     "value": contact.PHONE_WORK_MOBILE,
                     "type": "work_mobile"
                 })
@@ -335,7 +324,7 @@ function updateContact(userKey, contact, config) {
 
 }
 
-Array_contains = function(arr, obj) {
+Array_contains = function (arr, obj) {
     var i = arr.length;
     while (i--) {
         if (arr[i] === obj) {

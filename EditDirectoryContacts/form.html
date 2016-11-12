@@ -44,7 +44,7 @@
         <form id="contactform">
             <div class="block">
                 <div class="inline form-group">
-                    <label class="control-label" for="inputName">Name</label>
+                    <label class="control-label" for="inputFULL_NAME">Name</label>
                     <input type="text" id="inputFULL_NAME" placeholder="Full Name" value="<?= contact.NAME ?>"  readonly="readonly" disabled>
                 </div>
 
@@ -55,18 +55,18 @@
             </div>
             <div class="block">
                 <div class="inline form-group">
-                    <label class="control-label" for="inputMobilePhone">Work Phone</label>
+                    <label class="control-label" for="inputPHONE_WORK">Work Phone</label>
                     <input type="tel" id="inputPHONE_WORK" class="input-medium" placeholder="+49 nnn nnnn" value="<?= contact.PHONE_WORK ?>"  pattern="[+/ 0-9]{3,10}">
                 </div>
 
                 <div class="inline form-group">
-                    <label class="control-label" for="inputMobilePhone">Work Mobile Phone</label>
+                    <label class="control-label" for="inputPHONE_WORK_MOBILE">Work Mobile Phone</label>
                     <input type="tel" id="inputPHONE_WORK_MOBILE" class="input-medium" placeholder="+49 nnn nnnn" value="<?= contact.PHONE_WORK_MOBILE ?>" pattern="[+/ 0-9]{3,10}">
                 </div>
             </div>
             <div class="block">
                 <div class="inline form-group">
-                    <label class="control-label" for="inputMobilePhone">Emergency Number</label>
+                    <label class="control-label" for="inputPHONE_EMERGENCY">Emergency Number</label>
                     <input type="tel" id="inputPHONE_EMERGENCY" class="input-medium" placeholder="+49 nnn nnnn"  value="<?= contact.PHONE_EMERGENCY ?>" pattern="[+/ 0-9]{3,10}">
                 </div>
 
