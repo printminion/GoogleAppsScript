@@ -7,6 +7,6 @@ Sample code for Google Apps Script.
 
 ContentService
 --------------
-* [SocialAPIService](https://github.com/russenreaktor/GoogleAppsScript/tree/master/ContentService/SocialAPIService)
-* [HowManyTasks](https://github.com/russenreaktor/GoogleAppsScript/tree/master/ContentService/HowManyTasks) Dashboard
+* [SocialAPIService](https://github.com/printminion/GoogleAppsScript/tree/master/SocialAPIService)
+* [HowManyTasks](https://github.com/printminion/GoogleAppsScript/tree/master/HowManyTasks) Dashboard
 

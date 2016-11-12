@@ -3,7 +3,7 @@
 * Example output for ubuntu-edge campaign https://docs.google.com/spreadsheet/ccc?key=0Akgh73WhU1qHdGNuY3lHUmhwVE9GMzc3aEJ0bHFRSmc&usp=sharing
 *
 * @author Misha M.-Kupriyanov https://plus.google.com/104512463398531242371/
-* @link https://github.com/russenreaktor/GoogleAppsScript/tree/master/IndiegogoTracker
+* @link https://github.com/printminion/GoogleAppsScript/tree/master/IndiegogoTracker
 *
 * Configuration:
 * 1) copy the spreadsheet https://docs.google.com/spreadsheet/ccc?key=0Akgh73WhU1qHdFgzazR6SERiWnpYTTlmVG9oaVRVcFE#gid=0

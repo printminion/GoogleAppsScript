@@ -10,9 +10,9 @@
 
 function testDoGet() {
 
-  var request = {queryString: 'network=twitter&user=russenreaktor&key=AIzaSyDyK7kSJV3',
-                 parameter:{user:['russenreaktor'], network:['russenreaktor'], key:['AIzaSyDyK7kSJV3']}, contextPath:null,
-                 parameters:{user:['russenreaktor'], network:['russenreaktor'], key:['AIzaSyDyK7kSJV3']}, contentLength:-1};
+  var request = {queryString: 'network=twitter&user=printminion&key=AIzaSyDyK7kSJV3',
+                 parameter:{user:['printminion'], network:['printminion'], key:['AIzaSyDyK7kSJV3']}, contextPath:null,
+                 parameters:{user:['printminion'], network:['printminion'], key:['AIzaSyDyK7kSJV3']}, contentLength:-1};
 
   return doGet(request);
 }

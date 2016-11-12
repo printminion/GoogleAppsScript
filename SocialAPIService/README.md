@@ -16,7 +16,7 @@
 }</pre>
 
 ##twitter
-**Request:** https://script.google.com/macros/s/YOUR_CONTENT_SCRIPT_ID/exec?key=YOUR_API_KEY&network=twitter&user=russenreaktor
+**Request:** https://script.google.com/macros/s/YOUR_CONTENT_SCRIPT_ID/exec?key=YOUR_API_KEY&network=twitter&user=printminion
 
 **Response:**
 <pre>{
@@ -24,7 +24,7 @@
   msg: "ok",
   data: {
     network: "twitter",
-    user: "russenreaktor",
+    user: "printminion",
     reach: "415"
   }
 }</pre>
@@ -53,7 +53,7 @@
 }</pre>
 
 ##youtube
-**Request:** https://script.google.com/macros/s/YOUR_CONTENT_SCRIPT_ID/exec?key=YOUR_API_KEY&network=youtube&user=russenreaktor
+**Request:** https://script.google.com/macros/s/YOUR_CONTENT_SCRIPT_ID/exec?key=YOUR_API_KEY&network=youtube&user=printminion
 
 **Response:**
 <pre>{
@@ -61,7 +61,7 @@
   msg: "ok",
   data: {
     network: "youtube",
-    user: "russenreaktor",
+    user: "printminion",
     reach: "41"
   }
 }</pre>

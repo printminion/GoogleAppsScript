@@ -7,7 +7,7 @@
 * 3. Prepare current project version for publishing "File" -> "Manage versions..." -> "Save New version"
 * 4. "Publish" -> "Deploy as web app..." (choose version) and hit "Deploy". Now you will get the link to published web app.
 *
-* @link   Github https://github.com/russenreaktor/GoogleAppsScript/tree/master/ContentService/HowManyTasks
+* @link   Github https://github.com/printminion/GoogleAppsScript/tree/master/HowManyTasks
 * @author Misha M.-Kupriyanov https://plus.google.com/104512463398531242371/
 */
 

@@ -3,7 +3,7 @@
 * @example parsePageValue_(response, '<span class="amount medium clearfix">', '</span>', null, null);
 *
 * @author Misha M.-Kupriyanov https://plus.google.com/104512463398531242371/
-* @link https://github.com/russenreaktor/GoogleAppsScript/tree/master/IndiegogoTracker
+* @link https://github.com/printminion/GoogleAppsScript/tree/master/IndiegogoTracker
 */
 
 function parsePageValue_(html, filterBegin, filterEnd, filterBegin2, filterEnd2) {

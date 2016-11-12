@@ -27,4 +27,4 @@ Configuration
 Links
 -------
 * Author: [Misha M.-Kupriyanov](https://plus.google.com/104512463398531242371/)
-* Source: [Git](https://github.com/russenreaktor/GoogleAppsScript/tree/master/IndiegogoTracker)
+* Source: [Git](https://github.com/printminion/GoogleAppsScript/tree/master/IndiegogoTracker)
