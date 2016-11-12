@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_top">
+
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        .contacts, .config {
+            width: 400px;
+            margin: 0 auto;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        input[disabled] {
+            color:gray;
+        }
+
+        .control-label { display: inline-block; min-width: 110px; }
+
+    </style>
+
+</head>
+<body>
+<div class="sidebar branding-below">
+
+    <div class="contacts">
+
+        <h2 class="title">Edit global contact</h2>
+
+        <p id="message" class="gray">
+            Please fill-in this form and contact information will automatically updated in global Contacts Directory. Thanks for you time.
+        </p>
+
+        <span id="messageError" class="error">
+
+  </span>
+
+
+        <form id="contactform">
+            <div class="block">
+                <div class="inline form-group">
+                    <label class="control-label" for="inputName">Name</label>
+                    <input type="text" id="inputFULL_NAME" placeholder="Full Name" value="<?= contact.NAME ?>"  readonly="readonly" disabled>
+                </div>
+
+                <div class="inline form-group">
+                    <label class="control-label" for="inputEmail">Email</label>
+                    <input type="text" id="inputEMAIL" class="input-large" placeholder="e.g. user@example.com" value="<?= contact.EMAIL ?>" readonly="readonly" disabled>
+                </div>
+            </div>
+            <div class="block">
+                <div class="inline form-group">
+                    <label class="control-label" for="inputMobilePhone">Work Phone</label>
+                    <input type="tel" id="inputPHONE_WORK" class="input-medium" placeholder="+49 nnn nnnn" value="<?= contact.PHONE_WORK ?>"  pattern="[+/ 0-9]{3,10}">
+                </div>
+
+                <div class="inline form-group">
+                    <label class="control-label" for="inputMobilePhone">Work Mobile Phone</label>
+                    <input type="tel" id="inputPHONE_WORK_MOBILE" class="input-medium" placeholder="+49 nnn nnnn" value="<?= contact.PHONE_WORK_MOBILE ?>" pattern="[+/ 0-9]{3,10}">
+                </div>
+            </div>
+            <div class="block">
+                <div class="inline form-group">
+                    <label class="control-label" for="inputMobilePhone">Emergency Number</label>
+                    <input type="tel" id="inputPHONE_EMERGENCY" class="input-medium" placeholder="+49 nnn nnnn"  value="<?= contact.PHONE_EMERGENCY ?>" pattern="[+/ 0-9]{3,10}">
+                </div>
+
+                <!--
+                <div class="inline form-group">
+                  <label class="control-label" for="inputDOB">Birthday</label>
+                  <input type="text" id="inputBIRTHDAY" class="input-small" placeholder="DD.MM.YYYY">
+                </div>
+                -->
+
+            </div>
+
+
+            <div class="block">
+                <div class="inline form-group">
+                    <label class="control-label" for="inputOrganizationName">Work Organisation</label>
+                    <input type="text" id="inputOrganizationName" class="input-medium" placeholder="ACME" value="<?= contact.organization.name ?>">
+                </div>
+
+                <div class="inline form-group">
+                    <label class="control-label" for="inputOrganizationDepartment">Work Department</label>
+                    <input type="text" id="inputOrganizationDepartment" class="input-medium" placeholder="IT" value="<?= contact.organization.department == undefined ? '' :  contact.organization.department ?>">
+                </div>
+
+            </div>
+
+
+            <div class="block">
+                <div class="inline form-group">
+                    <label class="control-label" for="inputOrganizationTitle">Work Title</label>
+                    <input type="text" id="inputOrganizationTitle" class="input-medium" placeholder="SWE" value="<?= contact.organization.title ?>">
+                </div>
+
+
+
+                <div class="inline form-group">
+                    <label class="control-label" for="inputOrganizationDescription">Work Description</label>
+                    <input type="text" id="inputOrganizationDescription" class="input-medium" placeholder="Software Engineer" value="<?= contact.organization.description ?>">
+                </div>
+
+            </div>
+
+
+
+            <p>
+                <input type="submit" class="btn blue" value="Update Entry" onclick="updateGoogleContacts(); return false;">
+            </p>
+        </form>
+        <!--
+         <hr />
+          <h3>Need help?</h3>
+          <p>
+          If you have any questions, refer to this <a target="_blank" href="#">tutorial</a> or watch the <a target="_blank" href="#">YouTube video</a>.
+
+          </p>
+        -->
+    </div>
+
+    <? if (contact.isAdmin || contact.isDelegatedAdmin) { ?>
+    <div class="config">
+
+        <h2 class="title">You are Admin</h2>
+
+        <p id="configformMessage" class="gray">
+            You can edit global script configuration here
+        </p>
+
+        <form id="configform">
+
+            <div class="block">
+                <input type="checkbox" id="userMayEditTheirOwnData" placeholder="Full Name"
+                <?if (config.userMayEditTheirOwnData) { ?>
+                checked
+                <?} ?>
+                >
+                <label class="control-label" for="userMayEditTheirOwnData">Users can edit their own data</label>
+
+            </div>
+
+
+
+            <div class="block">
+                <div class="inline form-group">
+                    <label class="control-label" for="sendUpdateNotificationTo">Send update notification to</label>
+                    <input
+                            id="sendUpdateNotificationTo"
+                            class="input-medium"
+                            placeholder="editor1@domain.com"
+                            value="<?= config.sendUpdateNotificationTo ?>">
+                </div>
+
+            </div>
+
+
+
+
+            <div class="block">
+                <div class="inline form-group">
+                    <label class="control-label" for="usersWhoCanEditForeignData">Delegated editors</label>
+                    <input
+                            id="usersWhoCanEditForeignData"
+                            class="input-medium"
+                            style="width: 380px"
+                            placeholder="editor1@domain.com,editor2@domain.com"
+                            value="<?= config.usersWhoCanEditForeignData ?>">
+                </div>
+
+            </div>
+
+            <p>
+                <input type="submit" class="btn blue" value="Save Config" onclick="updateConfig(); return false;">
+            </p>
+        </form>
+    </div>
+    <? } ?>
+
+</div>
+
+<script>
+
+    function progress(data) {
+
+        $("#message").html("Contact details have been updated in global address book. Thanks!");
+        return;
+    }
+
+    function progressError(data) {
+
+        console.log('progressError', data);
+
+        $("#message").html('');
+        $("#messageError").html(data);
+        return;
+
+    }
+
+    function updateGoogleContacts() {
+
+        var contact = {};
+
+
+        contact.organization = {
+            "name": $("input#inputOrganizationName").val(),
+            "title": $("input#inputOrganizationTitle").val(),
+
+            "department": $("input#inputOrganizationDepartment").val(),
+            "primary": true,
+            "customType": 'work',
+            "description": $("input#inputOrganizationDescription").val()
+        };
+
+
+
+        contact.EMAIL = $("input#inputEMAIL").val();
+
+        //contact.HOME_ADDRESS = $("input#inputHOME_ADDRESS").val();
+        contact.PHONE_WORK = $("input#inputPHONE_WORK").val();
+        contact.PHONE_WORK_MOBILE = $("input#inputPHONE_WORK_MOBILE").val();
+        contact.PHONE_EMERGENCY = $("input#inputPHONE_EMERGENCY").val();
+
+
+        //contact.SKYPE        = $("input#inputSKYPE").val();
+        //contact.TWITTER      = $("input#inputTWITTER").val();
+        //contact.BLOG         = $("input#inputBLOG").val();
+        contact.BIRTHDAY     = $("input#inputBIRTHDAY").val();
+
+
+        google.script.run
+            .withSuccessHandler(progress)
+            .withFailureHandler(progressError)
+            .updateMe(contact);
+
+        //$("#contactform").hide();
+        $("#message").html("Updating global address book contact, please wait..");
+
+        return false;
+
+    }
+
+    function progressUpdateConfig(data) {
+
+        $("#configformMessage").html("Config have been updated. Thanks!");
+        return;
+    }
+
+
+    function updateConfig() {
+        var config = {};
+
+        config.userMayEditTheirOwnData = $("input#userMayEditTheirOwnData").is(':checked');
+        config.usersWhoCanEditForeignData = $("input#usersWhoCanEditForeignData").val();
+        config.sendUpdateNotificationTo = $("input#sendUpdateNotificationTo").val();
+
+
+
+        google.script.run
+            .withSuccessHandler(progressUpdateConfig)
+            .setScriptConfig(config);
+
+        //$("#configform").hide();
+        $("#configformMessage").html("Updating config, please wait..");
+
+        return false;
+
+    }
+
+</script>
+</body>
+</html>
