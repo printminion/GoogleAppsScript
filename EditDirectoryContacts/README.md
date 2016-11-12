@@ -2,6 +2,7 @@
 
 
 Allow your G Suite users or delegated editors to edit Google directory contact records
+
 ---
 
  * author Misha M.-Kupriyanov https://google.com/+MishaMKupriyanov
